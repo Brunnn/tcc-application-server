@@ -113,4 +113,12 @@ export class ClientController {
         tokenRepo.save(token);
         response.status(200).send();
     }
+
+    public static async testMessage(request: Request, response: Response, mqttInstance: MqttClient) {
+        let topic = request.body.topic;
+        let message = request.body.message;
+        console.log("Server publishing message: ", message, " to topic: ", topic);
+        mqttInstance.publish(topic, message);
+        response.status(200).send();
+    }
 }

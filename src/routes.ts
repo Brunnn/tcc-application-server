@@ -19,6 +19,12 @@ export const AppRoutes = [
         path: "/id-token/register",
         method: "post",
         action: ClientController.registerClientToken
+    },
+
+    {
+        path: "/message",
+        method: "post",
+        action: ClientController.testMessage
     }
  
 ];

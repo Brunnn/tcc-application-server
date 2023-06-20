@@ -11,7 +11,7 @@ import 'dotenv/config'
 // note that it's not active database connection
 // TypeORM creates connection pools and uses them for your requests
 AppDataSource.initialize().then(async connection => {
-
+    console.log("Successfully connected to database.");
     var mqttInstance = initializeMQTT();
 
     // create express app
